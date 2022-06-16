@@ -4,7 +4,8 @@
   "description": "El ejercicio consitirá en hacer un flujo básico de autenticación",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
