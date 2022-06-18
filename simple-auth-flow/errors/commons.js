@@ -1,23 +1,23 @@
 module.exports = {
     400: {
         statusCode: 400,
-        error: newError('Something went wrong')
+        error: new Error('Something went wrong')
     },
     401: {
         statusCode: 401,
-        error: newError('Unauthorized')
+        error: new Error('Unauthorized')
     },
     403: {
         statusCode: 403,
-        error: newError('Forbidden')
+        error: new Error('Forbidden')
     },
     404: {
         statusCode: 404,
-        error: newError('Path not found')
+        error: new Error('Path not found')
     },
     500: {
         statusCode: 500,
-        error: newError('is currently unable to handle this request')
+        error: new Error('We are currently unable to handle this request')
     },
 
 }
