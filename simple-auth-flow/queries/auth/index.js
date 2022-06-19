@@ -7,10 +7,10 @@ const getFullUser = db => async ({ email = 'false', username = 'false' }) => {
         WHERE email = ${email}
         OR username = ${username};
         `);
-        console.log(result)
+
         return {
             ok: true,
-            searchMethod: email? "email" : "username",
+            searchMethod: email === result.email? "email" : "username",
             data: result,
         };
 
