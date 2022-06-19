@@ -20,6 +20,9 @@ module.exports = {
         },
     },
     login: {
-
+        unknown: {
+            statusCode: 400,
+            error: new Error('user or password incorrect')
+        }
     },
 }
