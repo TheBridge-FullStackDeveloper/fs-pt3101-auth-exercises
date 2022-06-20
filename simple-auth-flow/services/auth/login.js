@@ -6,8 +6,7 @@ const errors = require("../../errors/commons");
 module.exports = (db) => async (req, res, next) => {
     const { email, username, password } = req.body;
 
-    if (!email && !username) return next(generic["emptyName"]);
-    if (!password) return next(generic["emptyPassword"]);
+    if (!email && !username || !password) return next(generic["empty"]);
 
     const queryResult = await getCorrectUser(db)(
         { email, username, compareFn: hash.compare(password) }
@@ -15,7 +14,7 @@ module.exports = (db) => async (req, res, next) => {
 
     if (!queryResult.ok) return next(login[queryResult.code] || errors[500])
 
-    serialize(res, queryResult.data.email || queryResult.data.username)
+    serialize(res, {email: queryResult.data.email})
 
     res.status(200).json({
         success: true,

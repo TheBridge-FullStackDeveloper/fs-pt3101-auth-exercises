@@ -1,6 +1,6 @@
 const { sql } = require("slonik")
 
-const selectFullUser = ({ email, username }) => {
+const selectFullUser = ({ email = null, username = null }) => {
     return sql`
         SELECT * FROM users
         WHERE email = ${email}

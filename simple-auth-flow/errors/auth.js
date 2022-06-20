@@ -1,22 +1,14 @@
 module.exports = {
     generic: {
-        emptyName:{
+        empty:{
             statusCode: 400,
-            error: new Error('Username or email required')
+            error: new Error('All fields required')
         },
-        emptyPassword: {
-            statusCode: 400,
-            error: new Error('Password required')
-        }
     },
     register: {
-        usernameDuplication: {
+        duplication: {
             statusCode: 400,
-            error: new Error('username already exists')
-        },
-        emailDuplication: {
-            statusCode: 400,
-            error: new Error('email already exists')
+            error: new Error('user already exists')
         },
     },
     login: {
