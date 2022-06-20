@@ -6,7 +6,7 @@ const sign = (payload) => {
 
 const verify = (token) => {
   try {
-    return jwt.verify(token, process.env.SECRET);
+    return jwt.verify(token, process.env.JWT_SECRET);
   } catch (error) {
     console.error("> [verify]: ", error.message);
 
