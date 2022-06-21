@@ -4,7 +4,6 @@
 //const moment = require('moment')
 
 const create = (res, token, extTime = 7500000) => {
-  console.log(new Date(Date.now() + extTime))
   res.cookie("access_token", token, {
     expires: new Date(Date.now() + extTime),
     secure: false,
