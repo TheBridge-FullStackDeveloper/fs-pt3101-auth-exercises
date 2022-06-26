@@ -1,16 +1,14 @@
-import './App.css';
-import Form from "./components/Register"
+import './App.sass';
+import Login from "./pages/Login"
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
   return (
     <div className="App">
-      <header>
-        <h1>Holi</h1>
-      </header>
-      <Form />
-      <footer>
-        <h6>All rights reserved to Natalia Montes</h6>
-      </footer>
+      <Header/>
+      <Login />
+      <Footer/>
     </div>
   );
 }
