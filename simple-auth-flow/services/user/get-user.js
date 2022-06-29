@@ -8,7 +8,7 @@ module.exports = (db) => async (_, res, next) => {
 
     if (!queryResult.ok) return next(errors[400]);
 
-    const { username, email } = queryResult;
+    const { username } = queryResult.data;
 
     res.status(200).json({
         success: true,
