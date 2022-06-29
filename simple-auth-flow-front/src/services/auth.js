@@ -1,11 +1,12 @@
 import instance from "../configAxios/instance";
 
-export const registerUser = ({ email, password, username }) =>
+export const registerUser = ({ email, password, username }) => {
   instance.post("/auth/register", {
     email,
     password,
     username,
   });
+}
 
 export const loginUser = async ({ email, password, username }, setUser) => {
   await instance.post(
@@ -27,3 +28,8 @@ export const fetchUser = async (setUser) => {
   });
   setUser(data.data.data);
 };
+
+
+export const logoutUser = () => {
+  instance.post("/auth/logout");
+}

@@ -9,52 +9,21 @@ const Register = ({ registerUser, loginUser }) => {
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-
+    
     const { user, setUser } = useContext(authContext)
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        navigate('/profile')
+        if(user) {
+            navigate('/profile')
+        }
       }, [user])
-
-    /* TRIED TO DO A HANDLECHANGE FOR ALL INPUTS 
-    const handleChange = (e, setFormData) => {
-        setFormData({
-            [e.target.id]: e.target.value
-        })
-        console.log(`${e.target.id} :`, e.target.value,)
-        console.log('formData: ', formData)
-    } */
-
-
-    /* COULDN'T DO IT WITH REACT FOOK FORM USING THE SUBMIT
-    const onSubmit = data => {
-        console.log('data: ', data)
-    };
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    
-    const fieldsRequired = ["Email", "Username", "Password"];
-    const RequireFields = ({ fields }) => {
-        return fields.map((field, i) => {
-            return (
-                errors[field] && errors[field].type === "required" && (
-                    <span className="error" key={i} role="alert">{`${field} is required`}</span>
-                    )
-                    )
-                })
-            }
-            <form className="form" onSubmit={handleSubmit(onSubmit)}>
-            </form>
-    
-    
-    */
-    
-
+      
 
     return (
         <div className="register">
-            <h2> Login </h2>
+            <h2> Register </h2>
                 <label htmlFor="Email">Email: </label>
                 <input
                     id="Email"
@@ -110,3 +79,35 @@ const Register = ({ registerUser, loginUser }) => {
 }
 
 export default Register
+
+      /* TRIED TO DO A HANDLECHANGE FOR ALL INPUTS 
+      const handleChange = (e, setFormData) => {
+          setFormData({
+              [e.target.id]: e.target.value
+          })
+          console.log(`${e.target.id} :`, e.target.value,)
+          console.log('formData: ', formData)
+      } */
+  
+  
+      /* COULDN'T DO IT WITH REACT FOOK FORM USING THE SUBMIT
+      const onSubmit = data => {
+          console.log('data: ', data)
+      };
+      const { register, handleSubmit, formState: { errors } } = useForm();
+      
+      const fieldsRequired = ["Email", "Username", "Password"];
+      const RequireFields = ({ fields }) => {
+          return fields.map((field, i) => {
+              return (
+                  errors[field] && errors[field].type === "required" && (
+                      <span className="error" key={i} role="alert">{`${field} is required`}</span>
+                      )
+                      )
+                  })
+              }
+              <form className="form" onSubmit={handleSubmit(onSubmit)}>
+              </form>
+      
+      
+      */
