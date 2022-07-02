@@ -9,7 +9,6 @@ const serialize = (res, payload) => {
 
 const deserialize = (req) => {
   const { access_token } = req.cookies;
-
   const payload = jwt.verify(access_token);
 
   if (!payload) return false;
