@@ -30,6 +30,8 @@ export const fetchUser = async (setUser) => {
 };
 
 
-export const logoutUser = () => {
-  instance.post("/auth/logout");
+export const logoutUser = async () => {
+  await instance.post("/auth/logout", {
+    withCredentials: true,
+  });
 }
