@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function Profile({ logoutUser }) {
   const navigate = useNavigate();
 
-  const { user } = useContext(authContext);
+  const { user, setUser } = useContext(authContext);
 
   return (
     <div style={{ marginTop: "60px" }}>
@@ -14,7 +14,7 @@ export default function Profile({ logoutUser }) {
       <button
         onClick={() => {
           /* navigate('/login') */
-          logoutUser();
+          logoutUser(setUser);
         }}
       >
         Logout
