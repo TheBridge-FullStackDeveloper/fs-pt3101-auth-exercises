@@ -13,7 +13,6 @@ export default function Profile({ logoutUser }) {
       <p>User Email: {user.email}</p>
       <button
         onClick={() => {
-          /* navigate('/login') */
           logoutUser(setUser);
         }}
       >
